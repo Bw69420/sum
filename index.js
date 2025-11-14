@@ -13,7 +13,7 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
 client.once('ready', () => {
     console.log(`Bot is online as ${client.user.tag}`);
 });
-
+const port = process.env.PORT || 4000 
 // ===== REGISTER SLASH COMMANDS =====
 const commands = [
     new SlashCommandBuilder()
@@ -128,3 +128,4 @@ client.on('interactionCreate', async interaction => {
 
 // ===== LOGIN =====
 client.login(TOKEN);
+
